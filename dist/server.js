@@ -1,12 +1,13 @@
 import express from "express";
-import { sequelize } from "./database/index.js";
+import database from "./database/index.js";
+import { adminJs, adminJsRouter } from "./adminjs/index.js";
 const app = express();
+app.use(express.static("public"));
+app.use(adminJs.options.rootPath, adminJsRouter);
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    sequelize.authenticate().then(() => {
-        console.log("Connection has been established successfully.");
-    }).catch((error) => {
-        console.error("Unable to connect to the database:", error);
+app.listen(PORT, async () => {
+    await database.authenticate().then(() => {
+        console.log("DB connection successfull.");
     });
-    console.log(`Server started successfuly at port ${PORT}`);
+    console.log(`Server started successfuly at port ${PORT}.`);
 });
