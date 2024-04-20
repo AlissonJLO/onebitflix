@@ -1,2 +1,5 @@
 import { Category } from "./Category.js";
-export { Category };
+import { Course } from "./Course.js";
+Category.hasMany(Course);
+Course.belongsTo(Category);
+export { Course, Category };
