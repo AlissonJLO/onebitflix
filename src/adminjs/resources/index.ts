@@ -1,9 +1,10 @@
 // src/adminjs/resources.ts
 
 import { ResourceWithOptions } from "adminjs";
-import { Category, Course } from "../../models/index.js";
+import { Category, Course, Episode } from "../../models/index.js";
 import { categoryResourceOptions } from "./category.js";
 import { courseResourceOptions } from "./course.js";
+import { episodeResourceOptions } from "./episode.js";
 
 export const adminJsResources: ResourceWithOptions[] = [
   {
@@ -13,5 +14,9 @@ export const adminJsResources: ResourceWithOptions[] = [
   {
     resource: Category,
     options: categoryResourceOptions,
+  },
+  {
+    resource: Episode,
+    options: episodeResourceOptions,
   },
 ];
