@@ -3,6 +3,7 @@
 import { Category } from "./Category.js";
 import { Course } from "./Course.js";
 import { Episode } from "./Episode.js";
+import { User } from './User.js';
 
 Category.hasMany(Course);
 
@@ -11,4 +12,4 @@ Course.hasMany(Episode);
 
 Episode.belongsTo(Course);
 
-export { Course, Category, Episode };
+export { Course, Category, Episode, User };
