@@ -1,6 +1,7 @@
 import express from "express";
 import database from "./database/index.js";
 import { adminJs, adminJsRouter } from "./adminjs/index.js";
+import { componentLoader } from "./adminjs/ComponentLoader.js";
 
 const app = express();
 
@@ -16,4 +17,5 @@ app.listen(PORT, async () => {
   });
 
   console.log(`Server started successfuly at port ${PORT}.`);
+  console.log(componentLoader)
 });
