@@ -132,5 +132,9 @@ module.exports = {
 
   async down(queryInterface, Sequelize) {
     await queryInterface.bulkDelete("courses", null, {});
+    await queryInterface.sequelize.query(
+      "ALTER SEQUENCE courses_id_seq RESTART WITH 1",
+      { type: Sequelize.QueryTypes.RAW }
+    );
   },
 };
