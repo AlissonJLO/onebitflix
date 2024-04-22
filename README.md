@@ -73,7 +73,7 @@ Alternativamente, consulte a documentação do GitHub sobre [como criar uma pull
 
 ## Contato
 
-Se você tiver qualquer dúvida ou desejar entrar em contato com o mantenedor, envie um e-mail para `developer@example.com`.
+Se você tiver qualquer dúvida ou desejar entrar em contato com o mantenedor, envie um e-mail para `alissonloaquim@ehotmail.com`.
 
 ## Licença
 
