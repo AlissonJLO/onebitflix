@@ -31,9 +31,10 @@ export const adminJs = new AdminJs({
         grey60: "#4d4d4d",
         grey40: "#666666",
         grey20: "#dddddd",
-        filterBg: "#333333",
+        filterBg: "#A85A00",
         accent: "#151515",
         hoverBg: "#151515",
+
       },
     },
   },
