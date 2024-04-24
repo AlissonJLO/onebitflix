@@ -1,16 +1,20 @@
-import AdminJs from "adminjs";
 import AdminJsExpress from "@adminjs/express";
 import AdminJsSequelize from "@adminjs/sequelize";
-import database from "../database/index.js";
-import { adminJsResources } from "./resources/index.js";
-import { componentLoader } from "./ComponentLoader.js";
-import { User } from "../models/User.js";
+import AdminJs from "adminjs";
 import bcrypt from "bcrypt";
+import database from "../database/index.js";
+import { User } from "../models/User.js";
+import { componentLoader } from "./ComponentLoader.js";
+import { Components } from "./components/index.js";
 import { locale } from "./locale/index.js";
+import { adminJsResources } from "./resources/index.js";
 
 AdminJs.registerAdapter(AdminJsSequelize);
 
 export const adminJs = new AdminJs({
+  dashboard: {
+    component: Components.Dashboard,
+  },
   componentLoader,
   databases: [database],
   resources: adminJsResources,
@@ -34,7 +38,6 @@ export const adminJs = new AdminJs({
         filterBg: "#A85A00",
         accent: "#151515",
         hoverBg: "#151515",
-
       },
     },
   },
@@ -64,3 +67,5 @@ export const adminJsRouter = AdminJsExpress.buildAuthenticatedRouter(
     saveUninitialized: false,
   }
 );
+
+adminJs.watch();
